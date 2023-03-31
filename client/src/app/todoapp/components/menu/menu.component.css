@@ -1,0 +1,26 @@
+.options {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  gap: 1rem;
+  font-weight: bolder;
+  color: white;
+
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  color: black;
+  border-color: #848588;
+  border-width: thin;
+}
+
+.addBtn,
+.addTodo {
+  background-color: #194b32;
+}
+html{
+background-color: #23262d;
+}

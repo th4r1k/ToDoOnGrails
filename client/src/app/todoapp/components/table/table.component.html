@@ -1,0 +1,39 @@
+<table id="todoTable" border="1">
+<thead>
+<tr>
+  <th>Nome</th>
+  <th>Descrição</th>
+  <th>Data de Término</th>
+  <th>Horário de Término</th>
+  <th>Prioridade</th>
+  <th>Categoria</th>
+  <th>Status</th>
+  <th>
+    <select id="multipleOptions">
+
+      <option value=0>Altera selecionados</option>
+      <option value="todo">todo</option>
+      <option value="doing">doing</option>
+      <option value="done">done</option>
+    </select>
+  </th>
+  <th><button id="multipleChange" onclick="">Aplicar</button></th>
+</tr>
+</thead>
+<tbody id="insertDataIntoTable">
+<p *ngIf="tasks == undefined || tasks?.length == 0">Nenhuma tarefa cadastrada.</p>
+<tr *ngFor="let task of tasks ; let i = index">
+  <td> {{task.name}} </td>
+  <td> {{task.description}} </td>
+  <td> {{task.endDate}} </td>
+  <td> {{task.endTime}} </td>
+  <td> {{task.priority}} </td>
+  <td> {{task.category}} </td>
+  <td> {{task.status}}</td>
+  <td>
+    <button class="edtBtn"  (click)="editTask(task)"> Editar </button> <button class="delBtn" (click)="deleteTask(task.id, i)" > Deletar </button>
+  </td>
+  <td><input type="checkbox"/> </td>
+</tr>
+</tbody>
+</table>

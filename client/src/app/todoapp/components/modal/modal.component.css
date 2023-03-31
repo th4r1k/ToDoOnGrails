@@ -1,0 +1,35 @@
+.modalAdd,
+.modalEdt {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modalAdd .content,
+.modalEdt .content {
+  background-color: gray;
+  margin: 15% auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 50%;
+  gap: 0.3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "LexendDeca-Regular";
+  color: var(--title);
+}
+
+.modalAdd .content input,
+.modalEdt .content input {
+  border-radius: 0.2rem;
+  border-width: thin;
+  text-align: center;
+  background-color: lightgray;
+}

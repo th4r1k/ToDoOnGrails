@@ -1,0 +1,50 @@
+#todoTable {
+  margin: auto;
+  align-items: center;
+  border-color: #848588;
+  background-color: #1a232c;
+  color: gray;
+  border-radius: 1rem;
+  width: 80%;
+  text-align: center;
+}
+
+@media (max-width: 730px) {
+  #todoTable {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  #todoTable {
+    font-size: 0.7rem;
+  }
+}
+
+.addBtn,
+.addTodo {
+  background-color: #194b32;
+}
+
+.edtBtn {
+  background-color: #e45826;
+}
+
+.delBtn {
+  background-color: #960018;
+}
+#multipleChange {
+  padding: 0.1rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  color: black;
+  background-color: #f4d47c;
+  border-color: #848588;
+  border-width: thin;
+}
+
+#multipleOptions {
+  background-color: #f4d47c;
+  font-weight: bold;
+  color: black;
+}

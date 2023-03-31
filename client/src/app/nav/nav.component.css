@@ -1,13 +1,15 @@
-.nav-link {
-    padding: .5rem;
-    border-radius: 3px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.nav-link:hover, .nav-link:active {
-    background-color: #db4800;
+nav {
+  background-color: #23262d;
+  color: white;
+  padding: 2rem;
+  border-bottom: thin solid #848588;
+  text-align: center;
+  width: 100%;
 }
 
-.grails-icon img {
-    height: 27px;
-    background-image: url("../../images/grails-cupsonly-logo-white.svg");
-}
