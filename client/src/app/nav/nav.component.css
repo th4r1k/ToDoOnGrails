@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #23262d;
+  color: white;
+  padding: 2rem;
+  border-bottom: thin solid #848588;
+  text-align: center;
+  width: 100%;
+}
+
