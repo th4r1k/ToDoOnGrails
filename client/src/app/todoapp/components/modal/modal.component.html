@@ -1,36 +1,38 @@
 <div class="modalAdd" *ngIf="showCreateModal$ | async">
+  <form #createForm="ngForm">
   <div class="content">
     <h1>Criar nova Tarefa</h1>
 
     <label>Nome</label>
-    <input id="name" type="text" autocomplete="off" maxlength="15" pattern="[A-z]{4,15}" />
+    <input id="name" type="text" [(ngModel)]="name" name="name" autocomplete="off" maxlength="15" pattern="[A-z]{4,15}" />
 
     <label>Descrição</label>
-    <input id="description" type="text" autocomplete="off" pattern="[A-z]{4,15}" />
+    <input id="description" [(ngModel)]="description" name="description" type="text"  autocomplete="off" pattern="[A-z]{4,15}" />
 
     <label>Data de Término</label>
-    <input id="endDate" type="date" />
+    <input id="endDate" [(ngModel)]="endDate" name="endDate" type="date" />
 
     <label>Horário de Término</label>
-    <input id="endTime" type="time" />
+    <input id="endTime" [(ngModel)]="endTime" name="endTime"  type="time" />
 
     <label>Prioridade</label>
-    <input placeholder="Precisa ser um numeral" id="priority" type="number" min="1" max="5" />
+    <input placeholder="Precisa ser um numeral" id="priority" [(ngModel)]="priority" name="priority"  type="text" min="1" max="5" />
 
     <label>Categoria</label>
-    <input id="category" type="text" maxlength="15" pattern="[A-z]{4,15}" />
+    <input id="category" [(ngModel)]="category" name="category"  type="text" maxlength="15" pattern="[A-z]{4,15}" />
 
     <label>Status</label>
-    <select id="status">
+    <select id="status" [(ngModel)]="status" name="status" >
       <option value="todo">todo</option>
       <option value="doing">doing</option>
       <option value="done">done</option>
     </select>
     <br>
-    <button class="addTodo" (click)="hideModal()">Adicionar</button>
-    <small>(Para cancelar clique fora da janela do modal)</small>
+    <button class="addTodo" type="submit" (click)="createTask(createForm)">Adicionar</button>
+    <small>(Para cancelar pressione Esc)</small>
 
   </div>
+  </form>
 </div>
 
 <div class="modalEdt" *ngIf="showEditModal$ | async">
@@ -39,7 +41,7 @@
     <h1>Editar Tarefa</h1>
 
     <label>Nome</label>
-    <input id="editName" [(ngModel)]="task.name" name="name" #name="ngModel" type="text" disabled maxlength="15" pattern="[A-z]{4,15}" />
+    <input id="editName" [(ngModel)]="task.name" name="name"  type="text" disabled maxlength="15" pattern="[A-z]{4,15}" />
     <pre>{{task$.id}}</pre>
     <label>Descrição</label>
     <input id="editDescription" [(ngModel)]="task.description" name="description" type="text" autocomplete="off" pattern="[A-z]{4,15}" />
@@ -64,7 +66,7 @@
     </select>
     <br>
     <button class="edtTodo" type="submit" (click)="updateTask(editForm)">Editar</button>
-    <small>(Para cancelar clique fora da janela do modal)</small>
+    <small>(Para cancelar pressione Esc)</small>
 
   </div>
   </form>

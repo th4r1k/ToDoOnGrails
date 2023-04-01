@@ -18,8 +18,8 @@ constructor(private http: HttpClient) { }
   }
 
   createTask(task: Task): Observable<Task>{
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<Task>(`${this.apiUrl}/task`, task, { headers });
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json'});
+    return this.http.post<Task>(`${this.apiUrl}/task`, task, { headers,  responseType: 'text'  });
   }
 
   deleteTask(id:number): Observable<Task>{
@@ -27,7 +27,7 @@ constructor(private http: HttpClient) { }
     return this.http.delete<Task>(`${this.apiUrl}/task/${id}`, { headers });
   }
 
-  updateTask(task: any, id:number): Observable<Task>{
+  updateTask(task: Task, id:number): Observable<Task>{
     return this.http.put<Task>(`${this.apiUrl}/task/${id}`, task, { responseType: 'text' });
   }
 
