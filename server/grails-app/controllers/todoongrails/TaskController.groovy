@@ -39,7 +39,7 @@ class TaskController {
             @ApiResponse( code = 400, message = "Fail to create task")
     ])
     def save(Task task) {
-        if (task.hasErrors()) {
+        if (task.hasErrors() || !task.name) {
             render status: 400, text: "Fail to create task"
             return
         }
@@ -56,7 +56,7 @@ class TaskController {
             @ApiResponse( code = 400, message = "Fail to update task")
     ])
     def update(Task task) {
-        if (task.hasErrors()) {
+        if (task.hasErrors() || !task.name) {
             render status: 400, text: "Fail to update task"
             return
         }
@@ -73,6 +73,11 @@ class TaskController {
             @ApiResponse( code = 400, message = "Fail to delete task")
     ])
     def delete(Task task) {
+        if (task.hasErrors() || !task.name) {
+            render status: 400, text: "Fail to delete task"
+            return
+        }
+
         taskService.deleteTask(task)
         render status: 200, text: "Task deleted"
     }

@@ -5,14 +5,17 @@ import spock.lang.Specification
 
 class SwaggerControllerSpec extends Specification implements ControllerUnitTest<SwaggerController> {
 
-    def setup() {
-    }
 
-    def cleanup() {
-    }
+    void "Controller call swwagerService"() {
+        given:
+        controller.swaggerService = Mock(SwaggerService) {
+            generateJSON() >> "ok"
+        }
+        when:
+        controller.swaggerJson()
 
-    void "test something"() {
-        expect:"fix me"
-        true == false
+        then:
+        response.status == 200
+        response.text == "ok"
     }
 }
